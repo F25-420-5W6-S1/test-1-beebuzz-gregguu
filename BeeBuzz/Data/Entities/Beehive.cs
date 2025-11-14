@@ -21,5 +21,7 @@ A bee hive will have : location/ address, status (active/inactive), reason for d
         public ApplicationUser? User { get; set; }
 
         public int UserId { get; set; }
+
+        public ICollection<Organization> Organizations { get; set; }
     }
 }

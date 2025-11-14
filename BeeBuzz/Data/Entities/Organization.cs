@@ -14,6 +14,7 @@ namespace BeeBuzz.Data.Entities
         [Key]
         public required int OrganizationId { get; set; }
 
+        public ICollection<Organization> Beehives { get; set; }
         public ICollection<ApplicationUser>? Users { get; set; }
         public ApplicationUser User { get; set; }
     }

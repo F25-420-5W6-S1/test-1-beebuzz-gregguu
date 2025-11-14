@@ -8,9 +8,9 @@ namespace BeeBuzz.Data.Repositories
     {
         public OrganizationRepository(ApplicationDbContext context, ILogger<BeeBuzzGenericGenericRepository<Beehive>> logger) : base(context, logger) { }
     
-        public User GetOrgUsers(int orgId)
+        public ApplicationUser GetOrgUsers(int orgId)
         {
-            return (User)_dbSet.Where(user => user.OrganizationId == orgId).Include(organization => organization.User);
+            return (ApplicationUser)_dbSet.Where(user => user.OrganizationId == orgId).Include(organization => organization.User);
         }
     }
 }

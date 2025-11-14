@@ -1,6 +1,8 @@
-﻿namespace BeeBuzz.Data.Repositories.Helpers
+﻿using BeeBuzz.Data.Entities;
+
+namespace BeeBuzz.Data.Repositories.Helpers
 {
-    public interface IOrganizationRepository
+    public interface IOrganizationRepository : IRepositoryProvider<Organization>
     {
     }
 }

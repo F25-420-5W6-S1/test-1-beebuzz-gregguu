@@ -1,4 +1,6 @@
 ﻿
+using BeeBuzz.Data.Repositories.Helpers;
+
 namespace BeeBuzz.Data
 {
     public class UnitOfWork: IUnitOfWork

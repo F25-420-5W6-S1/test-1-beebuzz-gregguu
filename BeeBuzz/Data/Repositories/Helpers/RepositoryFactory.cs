@@ -1,4 +1,5 @@
 ﻿
+using BeeBuzz.Data.Entities;
 using BeeBuzz.Data.Interfaces;
 
 namespace BeeBuzz.Data.Repositories.Helpers
@@ -12,6 +13,10 @@ namespace BeeBuzz.Data.Repositories.Helpers
         {
             return new Dictionary<Type, Func<ApplicationDbContext, object>>
             {
+                {typeof(IBeeBuzzGenericRepository<Beehive>),dbContext =>
+                    new BeehiveRepository(dbContext, new Logger<BeehiveRepository>(_loggerFactory)) },
+                {typeof(IBeeBuzzGenericRepository<Organization>),dbContext =>
+                    new OrganizationRepository(dbContext, new Logger<OrganizationRepository>(_loggerFactory)) },
             };
         }
         public RepositoryFactories(ILoggerFactory loggerFactory)
